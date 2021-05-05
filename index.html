@@ -8,16 +8,27 @@
     <title>Parachute</title>
 </head>
 <body>
-    <form class="wordSubmit">
-        <input type='text' id='charSubmit'>
-        <input type='submit'>
+    <form >
+        <input type='text' id='wordField'>
+        <input type='submit' class='wordSubmit'>
+    </form>
+    <form>
+        <input type='text' id='charField'>
+        <input type='submit' class = 'charSubmit'>
     </form>
     <div class = 'frame'>
         <div class='columnOne'>
             <p>column one</p>
+            <ul class = 'guessWord'>
+
+            </ul>
         </div>
-        <div class='columnTwo'>Column two</div>
-        <div class='columnThree'></div>
+        <div class='columnTwo'>
+            <p>Column two</p>
+        </div>
+        <div class='columnThree'>
+            <p>Column three</p>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
