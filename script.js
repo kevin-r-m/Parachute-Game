@@ -20,7 +20,7 @@ submitBttn.addEventListener('click', function(event){
         li.innerText = char
         //Adding class so it can access later in guess character submission (lines 41 - 44)
         li.classList = 'guessChars'
-        li.setAttribute('data-figure', char)
+        li.style.opacity = 0
         let ul = document.querySelector('.guessWord')
         ul.appendChild(li)
     })
@@ -39,16 +39,17 @@ charSubmit.addEventListener('click', function(event){
     const char = charGuess.value
     //Need to access HTML li elements created with initial user submission lines 18 - 23
     let guessArray = document.querySelectorAll('.guessChars')
+    //Need to use the submitted letter to compare it against the array of characters for the word submitted
     guessArray.forEach(guess => {
         if (guess.innerText === char){
             console.log('match')
-
+            //Need to access available letters style on match
+            guess.style.opacity = 1
         }
 
     })
     console.log(char)
 })
-//Need to use the submitted letter to compare it against the array of characters for the word
 
 
 
