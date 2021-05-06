@@ -40,18 +40,37 @@ charSubmit.addEventListener('click', function(event){
     //Need to access HTML li elements created with initial user submission lines 18 - 23
     let guessArray = document.querySelectorAll('.guessChars')
     //Need to use the submitted letter to compare it against the array of characters for the word submitted
+    
+    var correct = false
     guessArray.forEach(guess => {
         if (guess.innerText === char){
             console.log('match')
+            correct = true
             //Need to access available letters style on match
             guess.style.opacity = 1
-        }
+        } 
 
     })
+    if (correct === false){
+        updateGuesses()
+        endGame()
+    }
     console.log(char)
 })
 
+let guesses = 5
+let guessesDisplay = document.querySelector('.guessesLeft')
 
+function updateGuesses() {
+    guesses -= 1
+    guessTracking = guessesDisplay.textContent = guesses
+}
+
+function endGame() {
+    if (guesses <= 0){
+        console.log('Its over man')
+    }
+}
 
 //Function for submission logic
     // function submitLogic(){
