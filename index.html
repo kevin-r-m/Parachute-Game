@@ -5,38 +5,49 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
     <title>Parachute</title>
 </head>
 <body>
-    <form >
-        <input type='text' id='wordField' placeholder='Enter your word'>
-        <input type='submit' class='wordSubmit'>
-    </form>
-    <form>
-        <input type='text' id='charField' placeholder='Make a guess!'>
-        <input type='submit' class = 'charSubmit'>
-    </form>
     <div class = 'frame'>
         <div class='columnOne'>
             <p>column one</p>
             <ul class = 'guessWord'>
-
+                
             </ul>
         </div>
         <div class='columnTwo'>
             <p>Column two</p>
             <h3>Guesses Left: <span class='guessesLeft'>5</span></h3>
+            <form class = 'guessInput'>
+                <input type='text' id='charField' placeholder='Make a guess!'>
+                <input type='submit' class = 'charSubmit'>
+            </form>
         </div>
         <div class='columnThree'>
             <p>Column three</p>
             <div>
                 <h2>available letters</h2>
                 <ul class = 'letterBox'>
-                  
+                    
                 </ul>
             </div>
         </div>
     </div>
+    <section class='gameStart'>
+        <h1 class = 'message'>Welcome to Parachute!</h1>
+        <p class = 'intro'>Please enter a word for your opponent to guess!</p>
+        <form >
+            <input type='text' id='wordField' placeholder='Enter your word'>
+            <input type='submit' class='wordSubmit' value='Submit word'>
+        </form>
+    </section>
+    <section class='gameOver'>
+        <h1 class="message">Oh no! It looks like you ran out of guesses.</h1>
+        <p class="intro">That's okay though, if you want to play again, you can.</p>
+        <button>Play again</button>
+
+    </section>
     <script src="script.js"></script>
 </body>
 </html>
