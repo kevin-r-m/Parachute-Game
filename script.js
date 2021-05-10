@@ -91,55 +91,89 @@ charSubmit.addEventListener('click', function(event){
             checkArray.splice(guess.dataset.position, 1, '$')
         }
     })
-    console.log(`Correct gusses are: ${correctGuess}`)
     if (correct === false){
         updateGuesses()
-        loseGame()
+        endGame()
     }
     if (correct === true){
-        winGame()
+        endGame()
     }
 })
 
 let guesses = 5
+let imgPosition = 1
 let guessesDisplay = document.querySelector('.guessesLeft')
 
 function updateGuesses() {
     guesses -= 1
+    imgPosition += 1
     guessTracking = guessesDisplay.textContent = guesses
+    let paraImg = document.querySelector('.paraImg')
+    paraImg.style.gridRow = imgPosition
 }
 
-function loseGame() {
-    if (guesses <= 0){
-        console.log('Its over man')
-        let end = document.querySelector('.gameOver')
+// function loseGame() {
+//     if (guesses <= 0){
+//         console.log('Its over man')
+//         let end = document.querySelector('.gameLose')
+//         end.classList.remove('hide')
+//         let retryBtn = document.querySelector('.retry')
+//         retryBtn.addEventListener('click', startOver)
+//         console.log('end of function')
+//     }
+// }
+
+// function winGame(){
+//    if(checkArray.every(isMoney) === true){
+//        let win = document.querySelector('.gameWin')
+//        win.classList.remove('hide')
+//        let retryBtn = document.querySelector('.retry')
+//        return
+//    }else if(guesses <= 0){
+//        let end = document.querySelector('.gameWin')
+//        end.classList.remove('hide')
+       
+//    }
+// }
+
+const endMessage = document.querySelector('.endMessage')
+const endIntro = document.querySelector('.endIntro')
+
+function endGame(){
+    //win scenario
+    if(checkArray.every(isMoney) === true){
+        endMessage.innerText = 'Oh yea! It looks like you were able to guess the word!'
+        endIntro.innerText = 'If you think you have what it takes to play again, get out there.'
+        let win = document.querySelector('.gameEnd')
+        win.classList.remove('hide')
+        let retryBtn = document.querySelector('.retry')
+        retryBtn.addEventListener('click', startOver)
+    //lose scenario
+    }else if(guesses <= 0){
+        endMessage.innerText = 'Oh no! It looks like you ran out of guesses.'
+        endIntro.innerText = 'That\'s okay though, if you want to play again, you can.'
+        let end = document.querySelector('.gameEnd')
         end.classList.remove('hide')
         let retryBtn = document.querySelector('.retry')
         retryBtn.addEventListener('click', startOver)
     }
 }
 
-function winGame(){
-   if(checkArray.every(isMoney) === true){
-       console.log('you win')
-   }
-}
-
 function startOver (){
     window.location.reload()
 }
 
-var tempArray = []
+// var tempArray = []
 
-function checkCharSum(arr){
-    for (let i = 0; i < arr.length; i++){
-        tempArray.push(arr[i].innerText)
-    }
-    return tempArray.reduce(function(a, b){
-        a[b] = a[b] +1||1
-        return a;
-    }, {});
-}
+// function checkCharSum(arr){
+//     for (let i = 0; i < arr.length; i++){
+//         tempArray.push(arr[i].innerText)
+//     }
+//     return tempArray.reduce(function(a, b){
+//         a[b] = a[b] +1||1
+//         return a;
+//     }, {});
+// }
 
 function isMoney(x){
    return x === '$'

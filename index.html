@@ -12,6 +12,9 @@
     <div class = 'frame'>
         <div class='columnOne'>
             <p>column one</p>
+            <div class="imgContainer">
+                <img class='paraImg' src='/images/parachuteMan.png' alt='Man with parachute'>
+            </div>
             <ul class = 'guessWord'>
                 
             </ul>
@@ -43,11 +46,10 @@
         </form>
         <p class = 'intro hide' id = 'error'></p>
     </section>
-    <section class='gameOver hide'>
-        <h1 class="message">Oh no! It looks like you ran out of guesses.</h1>
-        <p class="intro">That's okay though, if you want to play again, you can.</p>
+    <section class='gameEnd hide'>
+        <h1 class="endMessage"></h1>
+        <p class="endIntro"></p>
         <button class = 'retry'>Play again</button>
-
     </section>
     <script src="script.js"></script>
 </body>
