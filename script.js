@@ -101,40 +101,17 @@ charSubmit.addEventListener('click', function(event){
 })
 
 let guesses = 5
-let imgPosition = 1
+let imgRowPosition = 1
+
 let guessesDisplay = document.querySelector('.guessesLeft')
 
 function updateGuesses() {
     guesses -= 1
-    imgPosition += 1
+    imgRowPosition += 1
     guessTracking = guessesDisplay.textContent = guesses
     let paraImg = document.querySelector('.paraImg')
-    paraImg.style.gridRow = imgPosition
+    paraImg.style.gridRow = imgRowPosition
 }
-
-// function loseGame() {
-//     if (guesses <= 0){
-//         console.log('Its over man')
-//         let end = document.querySelector('.gameLose')
-//         end.classList.remove('hide')
-//         let retryBtn = document.querySelector('.retry')
-//         retryBtn.addEventListener('click', startOver)
-//         console.log('end of function')
-//     }
-// }
-
-// function winGame(){
-//    if(checkArray.every(isMoney) === true){
-//        let win = document.querySelector('.gameWin')
-//        win.classList.remove('hide')
-//        let retryBtn = document.querySelector('.retry')
-//        return
-//    }else if(guesses <= 0){
-//        let end = document.querySelector('.gameWin')
-//        end.classList.remove('hide')
-       
-//    }
-// }
 
 const endMessage = document.querySelector('.endMessage')
 const endIntro = document.querySelector('.endIntro')

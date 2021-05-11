@@ -9,7 +9,7 @@ body {
 
 .frame {
     display: grid;
-    grid-template-columns: 3fr 1fr 2fr;
+    grid-template-columns: 2fr .5fr 1.5fr;
     grid-template-rows: 1fr 1fr 1fr;
     width: 90vw;
     height: 90vh;
@@ -152,4 +152,25 @@ body {
 
 .move {
     transform: translate(50px)
+}
+
+button {
+    cursor: pointer;
+}
+
+input {
+    cursor: pointer;
+}
+
+.letterBank {
+    display: grid;
+    font-size: 24px;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    padding: 10px;
+    padding-left: 60px;
+}
+
+.charField {
+    width: 15%;
 }
