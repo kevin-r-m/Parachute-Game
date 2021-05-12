@@ -1,21 +1,22 @@
 body {
-    background-color: aquamarine;
+    background-color: #54C3CA;
     font-family: 'Roboto', sans-serif;
     font-weight: 900;
     width: 100vw;
-    height: 100vh;
-    margin: 40px 0px;
+    height: 80vh;
+    margin-top: 40px;
+    padding: 0;
 }
 
 .frame {
     display: grid;
-    grid-template-columns: 2fr .5fr 1.5fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 2fr .25fr 1.5fr;
+    grid-template-rows: .5fr 1fr 1fr 1fr 1fr;
     width: 90vw;
-    height: 90vh;
+    height: 100vh;
     margin: auto;
     padding: 0;
-    grid-gap: 10px;
+    grid-gap: 5px;
     max-height: 600px;
     max-width: 1500px;
     
@@ -23,34 +24,43 @@ body {
 
 .columnOne {
     grid-column: 1;
-    grid-row: 1/ span 3;
-    background-color: lightgrey;
+    grid-row: 2/ span 4;
+    /* background-color: lightgrey; */
     border-radius: 25px;
+    margin: 10px;
 }
 
 .columnTwo {
     grid-column: 2;
-    grid-row: 1/ span 3;
+    grid-row: 2/ 5;
     background-color: indianred;
     border-radius: 25px;
     position: relative;
+    margin: 10px;
+    border: 2px solid black;
+    
 }
 
 .columnThree {
     grid-column: 3;
-    grid-row: 1/ span 3;
+    grid-row: 1/ span 5;
     background-color: khaki;
-    margin: 0;
+    margin: 10px;
     border-radius: 25px;
+    border: 2px solid black;
 }
 
 .guessInput {
-    position: absolute;
-    margin: 5px;
-    width: 50px; 
-    bottom: 28%;
+    margin: 10px;
     display: inline-flex;
-    left: 10px
+    background-color: ivory;
+    grid-row: 5;
+    grid-column: 2;
+    padding: 10px;
+    border-radius: 25px;
+    border: 2px solid black;
+    z-index: 2;
+
 }
 
 .guessChars {
@@ -59,7 +69,7 @@ body {
     padding: 7px;
     padding-bottom: 0;
     margin: 2px;
-    font-size: 30px;
+    font-size: 48px;
     border-bottom: 2px solid black;
 }
 
@@ -69,6 +79,21 @@ body {
     margin: 10px;
     text-align: center;
     padding-bottom: 10px;
+    background-color: ivory;
+    grid-row: 5;
+    grid-column: 1;
+}
+
+.guessesTitle {
+    grid-column: 2;
+    grid-row: 1;
+    text-align: center;
+    background-color: #E79F6E;
+    text-align: center;
+    font-size: 64px;
+    border-radius: 25px;
+    border: 2px solid black;
+    margin: 10px;
 }
 
 .gameStart {
@@ -143,7 +168,7 @@ body {
 .imgContainer {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(5, 1fr);
+    grid-template-rows: repeat(5, .46fr);
     background-color: lightskyblue;
     border-radius: 25px;
     margin: 10px;
@@ -154,10 +179,6 @@ body {
     width: 30%;
     grid-column: 2;
     grid-row: 1;
-}
-
-.move {
-    transform: translate(50px)
 }
 
 button {
@@ -180,11 +201,12 @@ input {
     background-color: ivory;
     margin: 10px;
     border-radius: 25px;
+    border: 2px solid black;
 }
 
 #charField {
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    /* height: 30px; */
     font-size: 18px;
     font-weight: 900;
 }
@@ -193,3 +215,23 @@ input {
     text-decoration: line-through;
     opacity: .5;
 }
+
+.title {
+    grid-column: 1;
+    grid-row: 1;
+    background-color: #E79F6E;
+    text-align: center;
+    font-size: 64px;
+    border-radius: 25px;
+    border: 2px solid black;
+    margin: 10px;
+}
+
+.letterBankTitle{
+    text-align: center;
+    font-size: 32px;
+    border-radius: 25px;
+    border: 2px solid black;
+    margin: 10px;
+    background-color: #E79F6E;
+} 

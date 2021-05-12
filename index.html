@@ -10,27 +10,27 @@
 </head>
 <body>
     <div class = 'frame'>
+        <div class="title">Parachute</div>
         <div class='columnOne'>
-            <p>column one</p>
             <div class="imgContainer">
-                <img class='paraImg' src='Parachute-Game/images/parachuteMan.png' alt='Man with parachute'>
+                <img class='paraImg' src='/images/parachuteMan.png' alt='Man with parachute'>
             </div>
-            <ul class = 'guessWord'>
-                
-            </ul>
         </div>
+        <ul class = 'guessWord'>
+            
+        </ul>
+        
+        <h3 class = 'guessesTitle'>?</h3>
         <div class='columnTwo'>
-            <p>Column two</p>
-            <h3>Guesses Left: <span class='guessesLeft'>5</span></h3>
-            <form class = 'guessInput'>
-                <input type='text' id='charField' placeholder='?'>
-                <input type='submit' class = 'charSubmit' value="Guess">
-            </form>
+            <p>You have <span class='guessesLeft'>4</span> guesses left.</p>
         </div>
+        <form class = 'guessInput'>
+            <input type='text' id='charField' placeholder='?'>
+            <input type='submit' class = 'charSubmit' value="Guess">
+        </form>
         <div class='columnThree'>
-            <p>Column three</p>
             <div>
-                <h2>available letters</h2>
+                <h2 class = 'letterBankTitle'>Your Available Letters</h2>
                 <div class="letterBank">
                     <p class = 'letter' id = 'a'>A</p>
                     <p class = 'letter' id = 'b'>B</p>
