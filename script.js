@@ -62,7 +62,8 @@ const charGuess = document.querySelector('#charField')
 const charSubmit = document.querySelector('.charSubmit')
 //Need to grab the submitted letter after user submits
 let guessArray;
-let correctGuess = 0
+let correctGuess = 0;
+let availLetters;
 
 charSubmit.addEventListener('click', function(event){
     event.preventDefault();
@@ -98,6 +99,8 @@ charSubmit.addEventListener('click', function(event){
     if (correct === true){
         endGame()
     }
+    availLetters = document.getElementById(`${char}`)
+    availLetters.classList.add('strike')
 })
 
 let guesses = 5

@@ -16,6 +16,8 @@ body {
     margin: auto;
     padding: 0;
     grid-gap: 10px;
+    max-height: 600px;
+    max-width: 1500px;
     
 }
 
@@ -31,6 +33,7 @@ body {
     grid-row: 1/ span 3;
     background-color: indianred;
     border-radius: 25px;
+    position: relative;
 }
 
 .columnThree {
@@ -42,9 +45,12 @@ body {
 }
 
 .guessInput {
-    display: flex;
+    position: absolute;
     margin: 5px;
     width: 50px; 
+    bottom: 28%;
+    display: inline-flex;
+    left: 10px
 }
 
 .guessChars {
@@ -160,6 +166,7 @@ button {
 
 input {
     cursor: pointer;
+    text-align: center;
 }
 
 .letterBank {
@@ -169,8 +176,20 @@ input {
     grid-template-rows: repeat(6, 1fr);
     padding: 10px;
     padding-left: 60px;
+    font-weight: 900;
+    background-color: ivory;
+    margin: 10px;
+    border-radius: 25px;
 }
 
-.charField {
-    width: 15%;
+#charField {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    font-weight: 900;
+}
+
+.strike {
+    text-decoration: line-through;
+    opacity: .5;
 }
