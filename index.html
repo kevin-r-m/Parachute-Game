@@ -11,10 +11,10 @@
 <body>
     <div class = 'frame'>
         <div class="title">Parachute</div>
+        <div class="imgContainer">
+            <img class='paraImg' src='./images/parachuteMan.png' alt='Man with parachute'>
+        </div>
         <div class='columnOne'>
-            <div class="imgContainer">
-                <img class='paraImg' src='Parachute-Game/images/parachuteMan.png' alt='Man with parachute'>
-            </div>
         </div>
         <ul class = 'guessWord'>
             
@@ -30,43 +30,43 @@
         </form>
         <div class='columnThree'>
             <div>
-                <h2 class = 'letterBankTitle'>Your Available Letters</h2>
-                <div class="letterBank">
-                    <p class = 'letter' id = 'a'>A</p>
-                    <p class = 'letter' id = 'b'>B</p>
-                    <p class = 'letter' id = 'c'>C</p>
-                    <p class = 'letter' id = 'd'>D</p>
-                    <p class = 'letter' id = 'e'>E</p>
-                    <p class = 'letter' id = 'f'>F</p>
-                    <p class = 'letter' id = 'g'>G</p>
-                    <p class = 'letter' id = 'h'>H</p>
-                    <p class = 'letter' id = 'i'>I</p>
-                    <p class = 'letter' id = 'j'>J</p>
-                    <p class = 'letter' id = 'k'>K</p>
-                    <p class = 'letter' id = 'l'>L</p>
-                    <p class = 'letter' id = 'm'>M</p>
-                    <p class = 'letter' id = 'n'>N</p>
-                    <p class = 'letter' id = 'o'>O</p>
-                    <p class = 'letter' id = 'p'>P</p>
-                    <p class = 'letter' id = 'q'>Q</p>
-                    <p class = 'letter' id = 'r'>R</p>
-                    <p class = 'letter' id = 's'>S</p>
-                    <p class = 'letter' id = 't'>T</p>
-                    <p class = 'letter' id = 'u'>U</p>
-                    <p class = 'letter' id = 'v'>V</p>
-                    <p class = 'letter' id = 'w'>W</p>
-                    <p class = 'letter' id = 'x'>X</p>
-                    <p class = 'letter' id = 'y'>Y</p>
-                    <p class = 'letter' id = 'z'>Z</p>
-                </div>
             </div>
+        </div>
+        <h2 class = 'letterBankTitle'>Available Letters</h2>
+        <div class="letterBank">
+            <p class = 'letter' id = 'a'>A</p>
+            <p class = 'letter' id = 'b'>B</p>
+            <p class = 'letter' id = 'c'>C</p>
+            <p class = 'letter' id = 'd'>D</p>
+            <p class = 'letter' id = 'e'>E</p>
+            <p class = 'letter' id = 'f'>F</p>
+            <p class = 'letter' id = 'g'>G</p>
+            <p class = 'letter' id = 'h'>H</p>
+            <p class = 'letter' id = 'i'>I</p>
+            <p class = 'letter' id = 'j'>J</p>
+            <p class = 'letter' id = 'k'>K</p>
+            <p class = 'letter' id = 'l'>L</p>
+            <p class = 'letter' id = 'm'>M</p>
+            <p class = 'letter' id = 'n'>N</p>
+            <p class = 'letter' id = 'o'>O</p>
+            <p class = 'letter' id = 'p'>P</p>
+            <p class = 'letter' id = 'q'>Q</p>
+            <p class = 'letter' id = 'r'>R</p>
+            <p class = 'letter' id = 's'>S</p>
+            <p class = 'letter' id = 't'>T</p>
+            <p class = 'letter' id = 'u'>U</p>
+            <p class = 'letter' id = 'v'>V</p>
+            <p class = 'letter' id = 'w'>W</p>
+            <p class = 'letter' id = 'x'>X</p>
+            <p class = 'letter' id = 'y'>Y</p>
+            <p class = 'letter' id = 'z'>Z</p>
         </div>
     </div>
     <section class='gameStart'>
         <h1 class = 'message'>Welcome to Parachute!</h1>
         <p class = 'intro'>Please enter a word for your opponent to guess!</p>
         <form >
-            <input type='text' id='wordField' placeholder='Enter your word'>
+            <input type='text' id='wordField' placeholder='Type here'>
             <input type='submit' class='wordSubmit' value='Submit word'>
         </form>
         <p class = 'intro hide' id = 'error'></p>
