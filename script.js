@@ -16,6 +16,7 @@ submitBttn.addEventListener('click', function(event){
     const specialArray = ['!','?','@','#', '%', '^','&','(',')','-', '_', '=','+','[',']','{','}','|',';',':','\'','\"',',','.','<','>','/','`','~']
     let spaceDetector = (charArray.includes(' '))
     let specialChar = specialArray.some(special => charArray.includes(special))
+    let blankDetector = checkArray.every(check => check = '')
     if(spaceDetector === true){
         let errorMessage = document.querySelector('#error')
         errorMessage.innerText = `Woah there, you cannot use a space! Try again with out the space.`
@@ -32,12 +33,20 @@ submitBttn.addEventListener('click', function(event){
         console.log('special char')
         return
     }
+    if (charArray.length === 0){
+        let errorMessage = document.querySelector('#error')
+        errorMessage.innerText = `Woah there, you cannot just enter nothing! Try again and use a word.`
+        errorMessage.classList.remove('hide')
+        word.value = ''
+        console.log('special char')
+        return
+    }
     // Use static value to check for certain characters in new array of characters
     //Push charArray into html so it can be accessed by the user guesses
     console.log(charArray)
     for (let i = 0; i < charArray.length; i++) {
         let li = document.createElement('li')
-        li.innerText = charArray[i]
+        li.innerText = charArray[i].toLowerCase()
         //Adding class so it can access later in guess character submission (lines 41 - 44)
         li.classList = 'guessChars'
         li.setAttribute('data-position', i)
@@ -67,7 +76,7 @@ let availLetters;
 
 charSubmit.addEventListener('click', function(event){
     event.preventDefault();
-    const char = charGuess.value
+    const char = charGuess.value.toLowerCase()
     //Need to access HTML li elements created with initial user submission lines 18 - 23
     //Need to use the submitted letter to compare it against the array of characters for the word submitted
     charGuess.value = ''
@@ -103,7 +112,7 @@ charSubmit.addEventListener('click', function(event){
     availLetters.classList.add('strike')
 })
 
-let guesses = 5
+let guesses = 4
 let imgRowPosition = 1
 
 let guessesDisplay = document.querySelector('.guessesLeft')
