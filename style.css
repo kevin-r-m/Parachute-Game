@@ -321,3 +321,29 @@ input {
     font-size: 24px;
     text-decoration: underline;
 }
+
+#cloud1 {
+    position: absolute;
+    width: 20%;
+    right: 25%;
+    top: 10px;
+}
+
+#cloud2 {
+    position: absolute;
+    width: 15%;
+    left: 35%;
+    top: 10%;
+}
+
+#birds {
+    position: absolute;
+    width: 15%;
+    top: 18%;
+}
+
+#landscape {
+    position: absolute;
+    width: 50%;
+    top: 60%;
+}

@@ -128,7 +128,7 @@ charSubmit.addEventListener('click', function(event){
         endGame()
     }
     availLetters = document.getElementById(`${char}`)
-    availLetters.classList.add('strike')
+    availLetters.classList.add('hide')
 })
 
 let guesses = 4
