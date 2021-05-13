@@ -64,12 +64,23 @@
     </div>
     <section class='gameStart'>
         <h1 class = 'message'>Welcome to Parachute!</h1>
-        <p class = 'intro'>Please enter a word for your opponent to guess!</p>
+        <p class = 'intro'>Player 1, please enter a word for your opponent to guess!</p>
         <form >
             <input type='text' id='wordField' placeholder='Type here'>
             <input type='submit' class='wordSubmit' value='Submit word'>
         </form>
         <p class = 'intro hide' id = 'error'></p>
+        <div class='instructionsContent'>
+            <h2 class = 'instructionTitle'>The game is Parachute and the goal is simple.</h2>
+            <p class ='instructionText'>Pick who is going to be Player 1 & Player 2 then read your instructions below.</p>
+            
+            <span class = 'player1'>Player 1</span>
+            <p id ='instructionsContentCol1'>You're entering the word. We all need you to dig deep and come up something profound. Your goal is to stump your opponent with a difficult word to guess.</p>
+            <span class = 'player2'>Player 2</span>
+            <p id ='instructionsContentCol2'> You're guessing the word. We better hope you've been reading books because your goal is to guess the word before mr. parachute makes it to the ground.</p>
+            <button class = 'instructionsBtn'>Next</button>
+
+        </div>
     </section>
     <section class='gameEnd hide'>
         <h1 class="endMessage"></h1>

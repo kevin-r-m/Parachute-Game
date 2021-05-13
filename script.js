@@ -7,6 +7,25 @@ const startGame = document.querySelector('.gameStart')
 
 let checkArray = []
 
+const nextInstruction = document.querySelector('.instructionsBtn')
+const instructionsColumn1 = document.querySelector('#instructionsContentCol1')
+const instructionsColumn2 = document.querySelector('#instructionsContentCol2')
+const instructionText = document.querySelector('.instructionText')
+const instructionsContent = document.querySelector('.instructionsContent')
+
+nextInstruction.addEventListener('click', function(event){
+    event.preventDefault();
+    instructionsColumn1.innerText = 'Start thinking of your word and once you\'re ready, hit start game.'
+    instructionsColumn2.innerText = 'While Player 1 is thinking of their word, just hang tight. You cannot look at the screen while they\'re entering the word. This is a game of honor.'
+    instructionText.innerText = 'Get ready, follow the below instructions and hit Start Game'
+    nextInstruction.innerText = 'Start Game'
+    nextInstruction.addEventListener('click', function(event){
+        event.preventDefault();
+        instructionsContent.classList.add('hide')
+
+    })
+})
+
 submitBttn.addEventListener('click', function(event){
     event.preventDefault();
     // submitLogic();
