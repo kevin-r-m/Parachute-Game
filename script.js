@@ -16,7 +16,7 @@ const instructionsContent = document.querySelector('.instructionsContent')
 nextInstruction.addEventListener('click', function(event){
     event.preventDefault();
     instructionsColumn1.innerText = 'Start thinking of your word and once you\'re ready, hit start game.'
-    instructionsColumn2.innerText = 'While Player 1 is thinking of their word, just hang tight. You cannot look at the screen while they\'re entering the word. This is a game of honor.'
+    instructionsColumn2.innerText = 'While Player 1 is thinking of their word, just hang tight. You cannot look at the screen while they\'re entering the word. This is a test of honor.'
     instructionText.innerText = 'Get ready, follow the below instructions and hit Start Game'
     nextInstruction.innerText = 'Start Game'
     nextInstruction.addEventListener('click', function(event){
@@ -76,7 +76,7 @@ submitBttn.addEventListener('click', function(event){
     setTimeout(function(){
         startGame.style.opacity = 0
         startGame.style.pointerEvents = 'none'
-    }, 1000)
+    }, 500)
     checkNode = document.querySelectorAll('.guessChars');
     checkArray = [].slice.call(checkNode);
 })
@@ -132,16 +132,24 @@ charSubmit.addEventListener('click', function(event){
 })
 
 let guesses = 4
-let imgRowPosition = 1
+let rowPosition = 1
 
 let guessesDisplay = document.querySelector('.guessesLeft')
 
 function updateGuesses() {
     guesses -= 1
-    imgRowPosition += 1
+    rowPosition += 1
     guessTracking = guessesDisplay.textContent = guesses
     let paraImg = document.querySelector('.paraImg')
-    paraImg.style.gridRow = imgRowPosition
+    paraImg.style.gridRow = rowPosition
+    guessesDisplay.style.gridRow = rowPosition
+    if(guesses === 3){
+        guessesDisplay.style.backgroundColor = 'yellow'
+    }else if(guesses === 2){
+        guessesDisplay.style.backgroundColor = 'orange'
+    }else if(guesses === 1){
+        guessesDisplay.style.backgroundColor = 'red'
+    }
 }
 
 const endMessage = document.querySelector('.endMessage')
@@ -158,12 +166,14 @@ function endGame(){
         retryBtn.addEventListener('click', startOver)
     //lose scenario
     }else if(guesses <= 0){
-        endMessage.innerText = 'Oh no! It looks like you ran out of guesses.'
-        endIntro.innerText = 'That\'s okay though, if you want to play again, you can.'
-        let end = document.querySelector('.gameEnd')
-        end.classList.remove('hide')
-        let retryBtn = document.querySelector('.retry')
-        retryBtn.addEventListener('click', startOver)
+        setTimeout(function(){
+            endMessage.innerText = 'Oh no! It looks like you ran out of guesses.'
+            endIntro.innerText = 'That\'s okay though, if you want to play again, you can.'
+            let end = document.querySelector('.gameEnd')
+            end.classList.remove('hide')
+            let retryBtn = document.querySelector('.retry')
+            retryBtn.addEventListener('click', startOver)
+    }, 500)
     }
 }
 
