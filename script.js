@@ -35,29 +35,28 @@ submitBttn.addEventListener('click', function(event){
     const specialArray = ['!','?','@','#', '%', '^','&','(',')','-', '_', '=','+','[',']','{','}','|',';',':','\'','\"',',','.','<','>','/','`','~']
     let spaceDetector = (charArray.includes(' '))
     let specialChar = specialArray.some(special => charArray.includes(special))
-    let blankDetector = checkArray.every(check => check = '')
     if(spaceDetector === true){
         let errorMessage = document.querySelector('#error')
         errorMessage.innerText = `Woah there, you cannot use a space! Try again with out the space.`
         errorMessage.classList.remove('hide')
+        errorMessage.classList.add('jitter')
         word.value = ''
-        console.log('space detected')
         return
     }
     if (specialChar === true){
         let errorMessage = document.querySelector('#error')
         errorMessage.innerText = `Woah there, you cannot use a special character! Try again without the special character.`
         errorMessage.classList.remove('hide')
+        errorMessage.classList.add('jitter')
         word.value = ''
-        console.log('special char')
         return
     }
     if (charArray.length === 0){
         let errorMessage = document.querySelector('#error')
         errorMessage.innerText = `Woah there, you cannot just enter nothing! Try again and use a word.`
         errorMessage.classList.remove('hide')
+        errorMessage.classList.add('jitter')
         word.value = ''
-        console.log('special char')
         return
     }
     // Use static value to check for certain characters in new array of characters
@@ -141,14 +140,14 @@ function updateGuesses() {
     rowPosition += 1
     guessTracking = guessesDisplay.textContent = guesses
     let paraImg = document.querySelector('.paraImg')
-    paraImg.style.gridRow = rowPosition
+    paraImg.classList.add(`slide${rowPosition}`)
     guessesDisplay.style.gridRow = rowPosition
     if(guesses === 3){
-        guessesDisplay.style.backgroundColor = 'yellow'
+        guessesDisplay.style.backgroundColor = 'rgba(255, 255, 80, 0.5)'
     }else if(guesses === 2){
-        guessesDisplay.style.backgroundColor = 'orange'
+        guessesDisplay.style.backgroundColor = 'rgba(255, 166, 0, 0.5)'
     }else if(guesses === 1){
-        guessesDisplay.style.backgroundColor = 'red'
+        guessesDisplay.style.backgroundColor = 'rgba(255, 0, 0, 0.5)'
     }
 }
 
@@ -180,18 +179,6 @@ function endGame(){
 function startOver (){
     window.location.reload()
 }
-
-// var tempArray = []
-
-// function checkCharSum(arr){
-//     for (let i = 0; i < arr.length; i++){
-//         tempArray.push(arr[i].innerText)
-//     }
-//     return tempArray.reduce(function(a, b){
-//         a[b] = a[b] +1||1
-//         return a;
-//     }, {});
-// }
 
 function isMoney(x){
    return x === '$'
