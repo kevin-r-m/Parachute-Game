@@ -149,11 +149,12 @@ body {
     border: 3px solid rgb(43, 41, 41);
 }
 
+
 .imgContainer {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(5, 1fr);
-    background-image: linear-gradient(rgb(134, 211, 246) 75%,rgb(203, 246, 134));
+    background-image: linear-gradient(rgb(134, 211, 246) 75%,rgb(13, 190, 87));
     border-radius: 25px;
     margin: 10px;
     border: 2px solid rgb(204, 204, 204);
@@ -174,14 +175,14 @@ body {
     padding: 10px;
     grid-row: 1;
     font-weight: 900;
-    background-color: green;
+    background-color: rgba(18, 128, 18, 0.5);
     border-radius: 25px;
 }
 
 .paraImg {
     width: 30%;
-    grid-column: 2;
-    grid-row: 1;
+    margin-left: 100%;
+    margin-top: 0%;
 }
 
 input {
@@ -300,7 +301,7 @@ input {
     padding: 0;
     margin: 0;
     font-size: 24px;
-
+    
 }
 
 .instructionsBtn {
@@ -312,7 +313,7 @@ input {
     cursor: pointer;
     border-radius: 20px;
     background-color: #2c7873;
-
+    
 }
 
 .instructionsBtn:hover {
@@ -365,9 +366,80 @@ input {
     top: 60%;
 }
 
-#landscapePara {
-    position: inherit;
-    width: 100%;
-    grid-column: 1/ span 5;
-    grid-row: 5;
+
+/* Animations */
+
+
+.jitter {
+    animation: jitter .5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes jitter {
+    0% { transform: translate(.5px, .5px) rotate(0deg); }
+    20% { transform: translate(-.5px, -1px) rotate(-.25deg); }
+    40% { transform: translate(-2px, 0px) rotate(.25deg); }
+    60% { transform: translate(2px, 1px) rotate(0deg); }
+    80% { transform: translate(.5px, -.5px) rotate(.25deg); }
+    100% { transform: translate(-.5px, 1px) rotate(-.25deg); }
+  }
+
+  @keyframes slide2 {
+      from {
+          margin-top:0%;
+      }
+      to {
+        margin-top: 25%;
+      }
+  }
+
+.slide2 {
+    animation: slide2 .5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes slide3 {
+    from {
+        margin-top:25%;
+    }
+    to {
+      margin-top: 50%;
+    }
+}
+
+.slide3 {
+  animation: slide3 .5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slide4 {
+    from {
+        margin-top:50%;
+    }
+    to {
+      margin-top: 75%;
+    }
+}
+
+.slide4 {
+  animation: slide4 .5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slide5 {
+    from {
+        margin-top:75%;
+    }
+    to {
+      margin-top: 100%;
+    }
+}
+
+.slide5 {
+  animation: slide5 .5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
