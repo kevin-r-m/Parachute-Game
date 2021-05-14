@@ -153,12 +153,29 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(5, 1fr);
-    background-color: rgb(134, 211, 246);
+    background-image: linear-gradient(rgb(134, 211, 246) 75%,rgb(203, 246, 134));
     border-radius: 25px;
     margin: 10px;
     border: 2px solid rgb(204, 204, 204);
     grid-column: 1;
     grid-row: 2/ 5;
+}
+
+.guessContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 75px); 
+}
+
+.guessesLeft {
+    display: grid;
+    text-align: center;
+    font-size: 24px;
+    padding: 10px;
+    grid-row: 1;
+    font-weight: 900;
+    background-color: green;
+    border-radius: 25px;
 }
 
 .paraImg {
@@ -346,4 +363,11 @@ input {
     position: absolute;
     width: 50%;
     top: 60%;
+}
+
+#landscapePara {
+    position: inherit;
+    width: 100%;
+    grid-column: 1/ span 5;
+    grid-row: 5;
 }
