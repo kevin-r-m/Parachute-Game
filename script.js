@@ -28,10 +28,8 @@ nextInstruction.addEventListener('click', function(event){
 
 submitBttn.addEventListener('click', function(event){
     event.preventDefault();
-    // submitLogic();
     // grabbing the word entered and putting it into an array
     var charArray = Array.from(word.value)
-    console.log(charArray)
     const specialArray = ['!','?','@','#', '%', '^','&','(',')','-', '_', '=','+','[',']','{','}','|',';',':','\'','\"',',','.','<','>','/','`','~']
     let spaceDetector = (charArray.includes(' '))
     let specialChar = specialArray.some(special => charArray.includes(special))
@@ -61,7 +59,6 @@ submitBttn.addEventListener('click', function(event){
     }
     // Use static value to check for certain characters in new array of characters
     //Push charArray into html so it can be accessed by the user guesses
-    console.log(charArray)
     for (let i = 0; i < charArray.length; i++) {
         let li = document.createElement('li')
         li.innerText = charArray[i].toLowerCase()
@@ -78,6 +75,9 @@ submitBttn.addEventListener('click', function(event){
     }, 500)
     checkNode = document.querySelectorAll('.guessChars');
     checkArray = [].slice.call(checkNode);
+    
+    let wordLength = document.querySelector('.wordLength')
+    wordLength.innerText = charArray.length
 })
 
 
@@ -104,18 +104,9 @@ charSubmit.addEventListener('click', function(event){
 
     guessArray.forEach(guess => {
         if (guess.innerText == char){
-            console.log('match')
             correct = true
             //Need to access available letters style on match
             guess.style.opacity = 1
-            // if(checkArray.includes(char) && checkObj[char] === 0){
-            //     return
-            // }else{
-            //     checkArray.push(char)
-            //     console.log(`this is it before: ${checkObj[char]}`)
-            //     checkObj[char] -=1
-            //     console.log(`this is it after: ${checkObj[char]}`)
-            // }
             checkArray.splice(guess.dataset.position, 1, '$')
         }
     })
@@ -161,6 +152,7 @@ function endGame(){
         endIntro.innerText = 'If you think you have what it takes to play again, get out there.'
         let win = document.querySelector('.gameEnd')
         win.classList.remove('hide')
+        win.style.backgroundColor = '#6fb98f'
         let retryBtn = document.querySelector('.retry')
         retryBtn.addEventListener('click', startOver)
     //lose scenario
