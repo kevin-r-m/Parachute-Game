@@ -31,7 +31,7 @@
 
 ![Main Wireframe](./images/Wireframe.jpeg)
 
- # Hurdles & Remaining Issues
+ # Hurdles
 
  ### Scope
  Scope was a hurdle for me in the beginning of this project. Going in and out of functions and trying to carry data down through them led to a lot of head scratching and refactoring. Ultimately, I started setting variables with a global scope to help with this. 
