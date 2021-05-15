@@ -65,6 +65,8 @@ body {
     background-color: #6fb98f;
     grid-row: 5;
     grid-column: 1;
+    max-width: 710px;
+    word-wrap: break-word;
 }
 
 .lengthContainer {
