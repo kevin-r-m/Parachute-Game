@@ -74,7 +74,7 @@ submitBttn.addEventListener('click', function(event){
         startGame.style.pointerEvents = 'none'
     }, 500)
     checkNode = document.querySelectorAll('.guessChars');
-    checkArray = [].slice.call(checkNode);
+    checkArray = Array.from(checkNode);
     
     let wordLength = document.querySelector('.wordLength')
     wordLength.innerText = charArray.length
